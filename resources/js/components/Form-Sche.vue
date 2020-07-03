@@ -428,7 +428,7 @@ export default {
 
 .schedule-form-section .form-tab fieldset {
     display: grid;
-    height: 500px;
+    min-height: 500px;
 }
 .form-tab label {
     font-size: max(1.2vw, 22px);
