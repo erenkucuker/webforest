@@ -2,13 +2,29 @@
     <section class="footer">
         <div class="footer-info">
             <h4>{{ $t("footer-info") }}</h4>
-            <img src="img/logo-alone-min.png" loading="lazy" alt />
+            <router-link
+                class="pointer"
+                :to="{ name: 'Home' }"
+                tag="img"
+                src="img/logo-alone-min.png"
+                loading="lazy"
+            ></router-link>
             <p>Cankaya/Ankara Turkey</p>
-            <i class="fa fa-phone g-text" aria-hidden="true"></i>
-            <span>+1-202-555-0169 </span>
 
-            <p>www.webforest.org</p>
-            <p>info@webforest.org</p>
+            <span
+                ><i class="fa fa-phone g-text " aria-hidden="true"></i
+                >+1-202-555-0169
+            </span>
+
+            <p>
+                <i class="fa fa-globe g-text" aria-hidden="true"></i
+                >www.webforest.org
+            </p>
+
+            <p>
+                <i class="fa fa-envelope g-text " aria-hidden="true"></i
+                >info@webforest.org
+            </p>
         </div>
 
         <div class="footer-recent-blog-post">
@@ -82,6 +98,13 @@ export default {
 }
 .footer-navigation a {
     color: white;
+    text-transform: uppercase;
+}
+
+.footer-info {
+    display: grid;
+    justify-items: center;
+    row-gap: 6px;
 }
 
 .footer-info img {
