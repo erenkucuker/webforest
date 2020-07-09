@@ -24,8 +24,9 @@ export default {};
   display: grid;
   grid: 1fr / 1fr 1fr 1fr;
   align-items: center;
-  box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.78);
+  box-shadow: 8px -2px 155px 16px rgba(0, 0, 0, 0.75);
   height: 10vh;
+  padding: 0px 25px;
 }
 
 .call-action .call-action-sec {

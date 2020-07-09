@@ -4,13 +4,19 @@
       <h3 class="g-text">{{ $t("about-title") }}</h3>
       <hr class="section-underline g-item" />
     </div>
+    <video class="video-forest" autoplay="1">
+      <source src="video/1.mp4" type="video/mp4" />
+    </video>
+
     <div class="about-description">
       <img src="/img/logo-alone-min.png" alt />
       <p>{{ $t("about-desc") }}</p>
-      <router-link :to="{ name: 'Portfolio'}" class="btn-lg btn-primary">{{ $t("about-button1") }}</router-link>
-      <router-link :to="{ name: 'Portfolio'}" class="btn-lg btn-primary">{{ $t("about-button2") }}</router-link>
+
+      <div class="buttons-about">
+        <router-link :to="{ name: 'Portfolio'}" class="btn-lg btn-primary">{{ $t("about-button1") }}</router-link>
+        <router-link :to="{ name: 'Portfolio'}" class="btn-lg btn-primary">{{ $t("about-button2") }}</router-link>
+      </div>
     </div>
-    <div id="map" class="google-maps"></div>
   </section>
 </template>
 
@@ -29,7 +35,7 @@ export default {
 <style>
 .about-section {
   display: grid;
-  grid: 1fr 1fr 1fr / 1fr 1fr;
+  grid: auto auto auto / 1fr 1fr;
   background-color: white;
   justify-items: center;
   align-items: center;
@@ -43,17 +49,16 @@ export default {
 }
 
 .about-title {
-  grid-row: span 2;
+  grid-column: span 2;
 }
 .about-description {
-  grid-row: span 2;
   text-align: center;
 }
-#map {
-  grid-column: span 2;
+
+.video-forest {
   width: 100%;
-  height: 300px;
 }
+
 /* MOBILE START */
 @media (max-width: 767.98px) {
   .about-section {
@@ -64,9 +69,6 @@ export default {
   }
   .about-description {
     grid-row: initial;
-  }
-  #map {
-    grid-column: initial;
   }
 }
 /* MOBILE END */

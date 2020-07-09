@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => ['auth']], function () { 
+Route::get('/restrictedadminpage/blog', 'AdminController@blog')->name('adminblogpage');
+Route::get('/restrictedadminpage/dashboard', 'AdminController@index')->name('adminhomepage');
+});
+
+Route::get('/restrictedadminpage', 'AdminController@login')->name('loginpage');
+
 
 
 
@@ -32,3 +39,9 @@ Route::post('/api/schedules/upload','ScheduleController@storeImage');
 Route::get('{any}', function () {
     return view('layout');
 })->where('any', '.*');
+
+
+
+Auth::routes();
+
+

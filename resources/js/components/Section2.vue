@@ -7,6 +7,7 @@
       </h1>
       <hr class="section-underline g-item" />
     </div>
+
     <div class="features">
       <div class="feature-title">
         {{$t("section-2-service-title")}}
@@ -18,7 +19,10 @@
         <strong>{{$t("section-2-focus-4")}}</strong>
         <br />
         {{$t("section-2-focus-slogan-1")}}
-        <strong class="g-text">{{$t("section-2-focus-slogan-2")}}</strong>.
+        <strong class="g-text">{{$t("section-2-focus-slogan-2")}}</strong>
+        <div class="button-feature">
+          <a class="btn-lg btn-primary pointer">Read More</a>
+        </div>
       </div>
       <div class="feature-item">
         <i class="fa fa-desktop g-text" aria-hidden="true"></i>
@@ -52,9 +56,10 @@ export default {};
 .section-2 {
   height: 100vh;
   display: grid;
-  grid: 1fr 4fr / 1fr 4fr 1fr;
+  grid: 1fr 4fr 1fr / 1fr 4fr 1fr;
   justify-items: center;
   align-items: center;
+  padding: 0 50px;
 }
 
 .service-title {
@@ -99,6 +104,9 @@ export default {};
   align-self: center;
   text-align: center;
   line-height: 2.5rem;
+}
+.button-feature {
+  grid-column: 1/-1;
 }
 /* MOBILE START */
 @media (max-width: 767.98px) {

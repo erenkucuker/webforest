@@ -35,8 +35,6 @@ Vue.use(CoreuiVue);
 
 Vue.component("App", require("./pages/client/App.vue").default);
 
-Vue.component("Admin", require("./pages/admin/Dashboard.vue").default);
-
 Vue.component("navigation-bar", require("./components/Navbar.vue").default);
 
 Vue.component("showcase", require("./components/Showcase.vue").default);

@@ -13,6 +13,10 @@
   <link href="{{asset('css/hover-min.css')}}" rel="stylesheet" type="text/css" />
   <link href="{{asset('css/fontawesome.min.css')}}" rel="stylesheet" type="text/css" />
   <link href="{{asset('css/solid.min.css')}}" rel="stylesheet" type="text/css" />
+  <link href="{{asset('css/brands.min.css')}}" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;600&family=Oxygen:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
   {{-- CSS FILES END --}}
 </head>
 

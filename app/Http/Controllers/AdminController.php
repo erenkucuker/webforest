@@ -13,8 +13,17 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        return view ('admin.home');
     }
+        public function blog()
+    {
+        return view ('admin.blogs');
+    }
+            public function login()
+    {
+        return view ('admin.login');
+    }
+
 
     /**
      * Store a newly created resource in storage.

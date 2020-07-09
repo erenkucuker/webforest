@@ -8,8 +8,6 @@ import BlogDetail from "./pages/client/Blog/BlogDetail.vue";
 import About from "./pages/client/About.vue";
 import Contact from "./pages/client/Contact.vue";
 
-import Dashboard from "./pages/admin/Dashboard.vue";
-
 export const routes = [
     {
         name: "Home",
@@ -61,10 +59,5 @@ export const routes = [
         name: "Schedule Form",
         path: "/schedule-form",
         component: ScheduleForm
-    },
-    {
-        name: "Dashboard",
-        path: "webforest-admin/dashboard",
-        component: Dashboard
     }
 ];

@@ -16,63 +16,63 @@
             <div class="events">
               <ol>
                 <li @click="processstep=1">
-                  <a>
+                  <a :class="[processstep >= 1 ? 'events-active-item events-text-active':'']">
                     {{
                     $t("schedule-event-1")
                     }}
                   </a>
                 </li>
                 <li @click="processstep=2">
-                  <a>
+                  <a :class="[processstep >= 2 ? 'events-active-item events-text-active':'']">
                     {{
                     $t("schedule-event-2")
                     }}
                   </a>
                 </li>
                 <li @click="processstep=3">
-                  <a>
+                  <a :class="[processstep >= 3 ? 'events-active-item events-text-active':'']">
                     {{
                     $t("schedule-event-3")
                     }}
                   </a>
                 </li>
                 <li @click="processstep=4">
-                  <a>
+                  <a :class="[processstep >= 4 ? 'events-active-item events-text-active':'']">
                     {{
                     $t("schedule-event-4")
                     }}
                   </a>
                 </li>
                 <li @click="processstep=5">
-                  <a>
+                  <a :class="[processstep >= 5 ? 'events-active-item events-text-active':'']">
                     {{
                     $t("schedule-event-5")
                     }}
                   </a>
                 </li>
                 <li @click="processstep=6">
-                  <a>
+                  <a :class="[processstep >= 6 ? 'events-active-item events-text-active':'']">
                     {{
                     $t("schedule-event-6")
                     }}
                   </a>
                 </li>
                 <li @click="processstep=7">
-                  <a>
+                  <a :class="[processstep >= 7 ? 'events-active-item events-text-active':'']">
                     {{
                     $t("schedule-event-7")
                     }}
                   </a>
                 </li>
                 <li @click="processstep=8">
-                  <a>
+                  <a :class="[processstep >= 8 ? 'events-active-item events-text-active':'']">
                     {{
                     $t("schedule-event-8")
                     }}
                   </a>
                 </li>
                 <li @click="processstep=9">
-                  <a>
+                  <a :class="[processstep >= 9 ? 'events-active-item events-text-active':'']">
                     {{
                     $t("schedule-event-9")
                     }}
@@ -149,10 +149,11 @@ export default {
   display: grid;
   background-color: white;
   text-align: center;
+  padding: 20px;
 }
 
 .schedule-section p {
-  font-size: max(1.1vw, 18px);
+  font-size: max(1.1vw, 16px);
 }
 
 .schedule-card {
@@ -188,7 +189,6 @@ export default {
 }
 
 .schedule-btn {
-  width: 10%;
   height: 45px;
   display: grid;
   justify-items: center;
@@ -242,7 +242,7 @@ export default {
 }
 
 .events ol li a {
-  color: var(--gradient-color2);
+  color: grey;
 }
 
 .events ol li a:after {
@@ -251,12 +251,20 @@ export default {
   position: relative;
   top: 0;
   margin: auto;
-  background-color: var(--gradient-color2);
+  background-color: grey;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid var(--gradient-color2);
+  border: 2px solid grey;
   z-index: 1;
+}
+
+.events-text-active {
+  color: green !important;
+}
+.events-active-item:after {
+  background-color: #237a57 !important;
+  border: 2px solid #237a57 !important;
 }
 
 .events-content {
@@ -270,7 +278,7 @@ export default {
     justify-items: center;
   }
   .schedule-card img {
-    width: max(95vw, 80vw) !important;
+    width: 80vw !important;
   }
   .schedule-btn {
     width: auto;

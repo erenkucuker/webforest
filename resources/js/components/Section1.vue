@@ -82,7 +82,7 @@ export default {};
   letter-spacing: 10px;
 }
 .title-section-sec {
-  align-self: center;
+  align-self: start;
   text-align: center;
   justify-self: center;
   grid-row: 2/2;
@@ -102,6 +102,7 @@ export default {};
   justify-items: center;
   column-gap: 0.5vw;
   height: 50vh;
+  padding: 0 80px;
 }
 
 .graph-item {

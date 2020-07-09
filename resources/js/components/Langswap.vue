@@ -1,8 +1,8 @@
 <template>
   <div @click="LanguageOption()" class="lang-swap hvr-icon-hang">
     <span class="flag-icon flag-icon-squared" v-bind:class="[langClass+currentLanguageShort]"></span>
-    <p>{{currentLang()}}</p>
-    <i class="fa fa-caret-down fa-lg hvr-icon" aria-hidden="true"></i>
+    <p class="g-text">{{currentLang()}}</p>
+    <i class="fa fa-caret-down fa-lg hvr-icon g-text" aria-hidden="true"></i>
     <div class="dropdown-content" v-bind:class="{ 'dropdown-active': isActiveLang }">
       <div @click="setLocale('tr')" class="dropdown-item">
         <span class="flag-icon flag-icon-tr flag-icon-squared"></span>
