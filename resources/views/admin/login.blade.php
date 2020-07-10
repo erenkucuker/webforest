@@ -43,8 +43,8 @@
         <div class="login-wrap">
           <div class="login-content">
             <div class="login-logo">
-              <a href="#">
-                <img src="images/icon/logo.png" alt="CoolAdmin">
+              <a>
+                <img src="{{asset('img/logo-alone-min.png')}}" style="max-width: 100px">
               </a>
             </div>
             <div class="login-form">

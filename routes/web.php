@@ -14,7 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['middleware' => ['auth']], function () { 
 Route::get('/restrictedadminpage/blog', 'AdminController@blog')->name('adminblogpage');
+
 Route::get('/restrictedadminpage/dashboard', 'AdminController@index')->name('adminhomepage');
+
+Route::get('/restrictedadminpage/schedules', 'AdminController@schedules')->name('adminschedulespage');
+
+
+Route::get('/restrictedadminpage/blog/create', 'AdminController@createblog')->name('admincreateblogpage');
+Route::post('/restrictedadminpage/blog/create', 'AdminController@storecreateblog')->name('adminstorecreateblog');
+
+Route::get('/restrictedadminpage/blog/{id}/edit', 'AdminController@editblog')->name('admineditblogpage');
+Route::post('/restrictedadminpage/blog/{id}/edit', 'AdminController@storeeditblog')->name('adminstoreeditblog');
+
+
+Route::get('/restrictedadminpage/blog/{id}', 'AdminController@detailblog')->name('admindetailblogpage');
+Route::get('/restrictedadminpage/blog/{id}/delete', 'AdminController@deleteblog')->name('admindeleteblog');
+
 });
 
 Route::get('/restrictedadminpage', 'AdminController@login')->name('loginpage');

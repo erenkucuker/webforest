@@ -19,7 +19,6 @@ class CreateBlog extends Migration
             $table->string('title');
             $table->longText('content');
             $table->string('author');
-            $table->string('image_path');
             $table->bigInteger('category_id');
         });
     }

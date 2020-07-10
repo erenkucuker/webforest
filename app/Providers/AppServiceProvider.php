@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Blog;
+use App\Schedule;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,5 +28,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+      view()->composer('*', function ($view) {
+        $blogs=Blog::all();
+        $schedules=Schedule::all();
+        $view->with('blogs', $blogs );
+        $view->with('schedules', $schedules );
+
+    });
     }
 }

@@ -5,6 +5,8 @@
 <div class="page-container2">
   <!-- HEADER DESKTOP-->
 
+
+
   <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
     <div class="logo">
       <a href="#">
@@ -202,8 +204,8 @@
         <div class="row">
           <div class="col-md-6 col-lg-3">
             <div class="statistic__item">
-              <h2 class="number">10,368</h2>
-              <span class="desc">members online</span>
+              <h2 class="number">{{$blogs->count()}}</h2>
+              <span class="desc">Total blog</span>
               <div class="icon">
                 <i class="zmdi zmdi-account-o"></i>
               </div>
@@ -211,8 +213,8 @@
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="statistic__item">
-              <h2 class="number">388,688</h2>
-              <span class="desc">items sold</span>
+              <h2 class="number">{{$schedules->count()}}</h2>
+              <span class="desc">Schedule</span>
               <div class="icon">
                 <i class="zmdi zmdi-shopping-cart"></i>
               </div>
@@ -338,7 +340,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="copyright">
-            <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.
+            <p>Copyright © 2020 WebForest All rights reserved.
             </p>
           </div>
         </div>

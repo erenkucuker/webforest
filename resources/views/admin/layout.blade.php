@@ -35,6 +35,7 @@
   <!-- Main CSS-->
   <link href="{{asset('css/theme.css')}}" rel="stylesheet" media="all">
 
+
 </head>
 
 <body class="animsition">
@@ -42,14 +43,13 @@
     <!-- MENU SIDEBAR-->
     <aside class="menu-sidebar2">
       <div class="logo">
-        <a href="{{route('adminhomepage')}}">
+        <a class="text-white" href="{{route('adminhomepage')}}">
           Webforest Admin Panel
         </a>
       </div>
       <div class="menu-sidebar2__content js-scrollbar1">
         <div class="account2">
-
-          <h4 class="name">john doe</h4>
+          <h4 class="name">{{ Auth::user()->name }}</h4>
           <form action="{{ route('logout') }}" method="POST">
             <button type="submit">Sign out</button>
             @csrf
@@ -57,24 +57,24 @@
         </div>
         <nav class="navbar-sidebar2">
           <ul class="list-unstyled navbar__list">
-            <li class="active has-sub">
+            <li class="{{ (request()->is('restrictedadminpage/dashboard')) ? 'active' : '' }}">
               <a class="js-arrow" href="{{route('adminhomepage')}}">
                 <i class="fas fa-tachometer-alt"></i>Dashboard
               </a>
             </li>
-            <li>
+            <li class="{{ (request()->is('restrictedadminpage/blog')) ? 'active' : '' }}">
               <a href="{{route('adminblogpage')}}">
                 <i class="fas fa-copy"></i>Blogs</a>
             </li>
-            <li>
-              <a href="inbox.html">
+            <li class="{{ (request()->is('restrictedadminpage/schedule')) ? 'active' : '' }}">
+              <a href="{{route('adminschedulespage')}}">
                 <i class="fas fa-calendar-alt"></i>Schedules</a>
             </li>
-            <li>
+            <li class="{{ (request()->is('restrictedadminpage/visitorinfo')) ? 'active' : '' }}">
               <a href="inbox.html">
                 <i class="zmdi zmdi-account-calendar"></i>Visitor Info</a>
             </li>
-            <li>
+            <li class="{{ (request()->is('restrictedadminpage/settings')) ? 'active' : '' }}">
               <a href="inbox.html">
                 <i class="zmdi zmdi-settings"></i>Settings</a>
             </li>
@@ -187,9 +187,20 @@
       </div>
     </header>
     <!-- PAGE CONTAINER-->
-    @section('content')
-    @show
-
+    @if(!request()->is('restrictedadminpage/dashboard'))
+    <div class="page-container">
+      <div class="main-content">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="row">
+              @endif
+              @section('content')
+              @show
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Jquery JS-->
@@ -219,6 +230,10 @@
 
   <!-- Main JS-->
   <script src="{{asset('js/main.js')}}"></script>
+  <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+  <script>
+    CKEDITOR.replace( 'editor' );
+  </script>
 
 </body>
 
