@@ -7,6 +7,9 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Blog;
 use App\Schedule;
+use View;
+
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,12 +32,12 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-      view()->composer('*', function ($view) {
-        $blogs=Blog::all();
-        $schedules=Schedule::all();
-        $view->with('blogs', $blogs );
-        $view->with('schedules', $schedules );
-
-    });
+        View::composer('*', function ($view) {
+                $blogs=Blog::all();
+                $schedules=Schedule::all();
+                $view->with('blogs', $blogs );
+                $view->with('schedules', $schedules );
+        });
+ 
     }
 }

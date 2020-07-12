@@ -19,25 +19,37 @@
         <object id="hel" data="img/macbook.svg" loading="lazy" type="image/svg+xml"></object>
         <h1>{{$t("section-1-title")}}</h1>
         <p>{{$t("section-1-desc")}}</p>
-        <a href class="btn-lg btn-primary hvr-back-pulse">{{$t("section-1-seebutton")}}</a>
+        <router-link
+          :to="{ name: 'Services' }"
+          class="btn-lg btn-primary hvr-back-pulse"
+        >{{$t("section-1-seebutton")}}</router-link>
       </div>
       <div class="graph-item">
         <object id="svg-object" data="img/iphoneanim.svg" type="image/svg+xml" loading="lazy"></object>
         <h1>{{$t("section-2-title")}}</h1>
         <p>{{$t("section-2-desc")}}</p>
-        <a href class="btn-lg btn-primary hvr-back-pulse">{{$t("section-1-seebutton")}}</a>
+        <router-link
+          :to="{ name: 'Services' }"
+          class="btn-lg btn-primary hvr-back-pulse"
+        >{{$t("section-1-seebutton")}}</router-link>
       </div>
       <div class="graph-item">
         <object id="svg-object" data="img/iphoneanim.svg" type="image/svg+xml" loading="lazy"></object>
         <h1>{{$t("section-3-title")}}</h1>
         <p>{{$t("section-3-desc")}}</p>
-        <a href class="btn-lg btn-primary hvr-back-pulse">{{$t("section-1-seebutton")}}</a>
+        <router-link
+          :to="{ name: 'Services' }"
+          class="btn-lg btn-primary hvr-back-pulse"
+        >{{$t("section-1-seebutton")}}</router-link>
       </div>
       <div class="graph-item">
         <object data="img/devdev.svg" type="image/svg+xml" loading="lazy"></object>
         <h1>{{$t("section-4-title")}}</h1>
         <p>{{$t("section-4-desc")}}</p>
-        <a href class="btn-lg btn-primary hvr-back-pulse">{{$t("section-1-seebutton")}}</a>
+        <router-link
+          :to="{ name: 'Services' }"
+          class="btn-lg btn-primary hvr-back-pulse"
+        >{{$t("section-1-seebutton")}}</router-link>
       </div>
     </div>
   </section>

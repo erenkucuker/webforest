@@ -4,6 +4,7 @@
       <h3 class="g-text">{{ $t("about-title") }}</h3>
       <hr class="section-underline g-item" />
     </div>
+
     <video class="video-forest" autoplay="1">
       <source src="video/1.mp4" type="video/mp4" />
     </video>
@@ -39,6 +40,7 @@ export default {
   background-color: white;
   justify-items: center;
   align-items: center;
+  padding: 25px 25px;
 }
 .about-section h3 {
   font-size: max(2.5vw, 25px);
@@ -56,13 +58,14 @@ export default {
 }
 
 .video-forest {
-  width: 100%;
+  width: 70%;
+  border: 2px solid green;
 }
 
 /* MOBILE START */
 @media (max-width: 767.98px) {
   .about-section {
-    grid: 1fr 1fr 1fr / 1fr;
+    grid: auto auto auto / 1fr;
   }
   .about-title {
     grid-row: initial;

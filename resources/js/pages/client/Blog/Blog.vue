@@ -2,33 +2,42 @@
   <section class="page-section blog-section">
     <div class="blog-news">
       <div v-for="(blog, index) in paginatedBlogs" :key="index" class="blog-item">
-        <img v-bind:src="blog.image_path" />
+        <img
+          v-bind:src="'/blog_images/' + blog.id + '.jpg'"
+          @error="$event.target.src = '/img/place.png'"
+        />
         <h3 class="blog-item-title g-text">{{ blog.title }}</h3>
         <hr class="underline-blog g-item" />
         <p>{{ blog.content | deleteHtmlTags | truncateFilter(50) }}</p>
         <div class="blog-info">
           <i v-if="blog.updated_at" class="fa fa-calendar g-text" aria-hidden="true"></i>
-          <span v-if="blog.created_at">
-            {{
-            $moment(blog.created_at).format("l")
-            }}
-          </span>
+          <span v-if="blog.created_at">{{ $moment(blog.created_at).format("l") }}</span>
 
           <i class="fa fa-user g-text" aria-hidden="true"></i>
           <span>{{ blog.author }}</span>
           <i class="fa fa-tag g-text" aria-hidden="true"></i>
 
-          <span class="blog-item-category">
-            {{
-            categories[blog.category_id - 1].name
-            }}
+          <span class="blog-item-category">{{ categories[blog.category_id - 1].name }}</span>
+        </div>
+        <div class="blog-detail-button">
+          <router-link
+            tag="span"
+            :to="{ name: 'Blog Detail', params: { blogId: blog.id } }"
+            class="btn-lg btn-primary hvr-back-pulse pointer"
+          >Read More</router-link>
+          <span @click="shareToggle(blog.id)" class="btn-primary pointer">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+            Share
           </span>
         </div>
-        <router-link
-          :to="{ name: 'BlogDetail', params: { blogId: blog.id } }"
-          class="btn-lg btn-primary hvr-back-pulse"
-        >Read More</router-link>
+        <div v-if="showToggle && clickedToggle == blog.id" class="social-links">
+          <i @click="goShare('linkedin',blog.id)" class="fab fa-linkedin linkedin fa-2x pointer"></i>
+          <i @click="goShare('facebook',blog.id)" class="fab fa-facebook facebook fa-2x pointer"></i>
+          <i @click="goShare('twitter',blog.id)" class="fab fa-twitter twitter fa-2x pointer"></i>
+          <i @click="goShare('mail',blog.id)" class="fa fa-envelope opera fa-2x pointer"></i>
+        </div>
       </div>
+
       <div class="pagination">
         <button class="btn-lg btn-primary" v-if="currentPage > 1" @click="prevPage()">Previous</button>
         <button
@@ -67,7 +76,7 @@
           <h3 class="g-text">{{ $t("blog-recent-title") }}</h3>
           <router-link
             :to="{
-                            name: 'BlogDetail',
+                            name: 'Blog Detail',
                             params: { blogId: recentBlog.id }
                         }"
             tag="div"
@@ -75,7 +84,10 @@
             :key="recentBlog.id"
             class="post-list-item"
           >
-            <img src="http://placehold.it/50x50" alt />
+            <img
+              v-bind:src="'blog_images/' + recentBlog.id + '.jpg'"
+              @error="$event.target.src = 'img/place.png'"
+            />
             <p>{{ recentBlog.title }}</p>
           </router-link>
         </div>
@@ -126,7 +138,10 @@ export default {
       itemPerPage: 3,
       currentPage: 1,
       activeFilter: 0,
-      searchKeyword: ""
+      searchKeyword: "",
+      clickedToggle: 0,
+      showToggle: false,
+      baseurl: process.env.MIX_APP_URL
     };
   },
   watch: {
@@ -155,6 +170,34 @@ export default {
     },
     categoryReset() {
       this.activeFilter = 0;
+    },
+    shareToggle(val) {
+      this.clickedToggle = val;
+      this.showToggle = !this.showToggle;
+    },
+    goShare(socialplat, blogId) {
+      let route = this.$router.resolve({
+        name: "Blog Detail",
+        params: blogId
+      });
+      if (socialplat == "facebook") {
+        let facebookshare = "https://www.facebook.com/sharer/sharer.php?u=";
+        window.open(facebookshare + this.baseurl + route.href, "_blank");
+      } else if (socialplat == "linkedin") {
+        let linkedinurl =
+          "https://www.linkedin.com/sharing/share-offsite/?url=";
+        window.open(linkedinurl + this.baseurl + route.href, "_blank");
+      } else if (socialplat == "twitter") {
+        let twitterurl = "https://twitter.com/home?status=";
+        window.open(twitterurl + this.baseurl + route.href, "_blank");
+      } else if (socialplat == "mail") {
+        window.open(
+          "mailto:pleaseenter@mail.com?subject=Do you wanna check this out &body=" +
+            this.baseurl +
+            route.href,
+          "_blank"
+        );
+      }
     }
   },
   metaInfo: {
@@ -177,7 +220,7 @@ export default {
 
 .blog-section {
   display: grid;
-  grid: 1fr 1fr / auto;
+  grid: 1fr /1fr 8fr 1fr;
   row-gap: 20px;
   background-color: white;
   min-height: 90vh;
@@ -185,6 +228,8 @@ export default {
 }
 .blog-news {
   display: grid;
+  grid-column: 2/2;
+  row-gap: 10px;
 }
 .blog-item {
   display: grid;
@@ -195,8 +240,8 @@ export default {
   row-gap: 20px;
 }
 .blog-item img {
-  width: 300px;
-  height: 150px;
+  width: 350px;
+  height: 230px;
 }
 .blog-item-title {
   text-transform: uppercase;
@@ -208,8 +253,6 @@ export default {
 }
 
 .blog-tabs {
-  display: grid;
-  grid-row: 1/-1;
   background-color: white;
 }
 .blog-tabs h3 {
@@ -222,7 +265,7 @@ export default {
 
 .blog-tabs input {
   border: none;
-  width: 84%;
+  width: 80%;
   height: 50px;
   border-color: green;
   color: green;
@@ -239,10 +282,13 @@ export default {
 
 .recent-post-list {
   display: grid;
-  grid-auto-flow: column;
   row-gap: 5vh;
   align-items: center;
   align-content: center;
+}
+.recent-post-list img {
+  width: 70px;
+  height: 50px;
 }
 
 .post-list-item {
@@ -262,7 +308,6 @@ export default {
   row-gap: 5px;
   color: green;
   font-size: 18px;
-  grid-auto-flow: column;
 }
 .blog-category-item {
   text-transform: uppercase;
@@ -290,14 +335,24 @@ export default {
   row-gap: 25px;
 }
 
+.social-links {
+  -webkit-animation: slide-in-blurred-top 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: slide-in-blurred-top 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.blog-detail-button {
+  display: grid;
+  grid-auto-flow: column;
+}
+
 /* MOBILE START */
 @media (max-width: 767.98px) {
   .blog-section {
-    grid: 1fr 1fr / auto;
+    grid: auto auto / auto;
     row-gap: 20px;
   }
   .blog-tabs {
-    grid-column: initial;
+    grid-row: 1;
   }
   .recent-post-list {
     justify-content: center;
@@ -315,6 +370,9 @@ export default {
   .blog-tab-container {
     display: grid;
     row-gap: 25px;
+  }
+  .blog-news {
+    grid-column: initial;
   }
 }
 /* MOBILE END */

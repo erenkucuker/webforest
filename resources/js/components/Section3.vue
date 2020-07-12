@@ -15,18 +15,22 @@
                 <img src="img/place.png" loading="lazy" alt />
                 <h3 class="g-text recent-new-title">{{ recentblog.title }}</h3>
                 <hr class="underline-article g-item" />
-                <p>{{ recentblog.content | truncateFilter(15) }}</p>
+                <p>
+                    {{
+                        recentblog.content | deleteHtmlTags | truncateFilter(15)
+                    }}
+                </p>
                 <div class="news-info">
                     <i class="fa fa-calendar g-text" aria-hidden="true"></i>
-                    <span>{{
-                        $moment(recentblog.created_at).format("l")
-                    }}</span>
+                    <span>
+                        {{ $moment(recentblog.created_at).format("l") }}
+                    </span>
                     <i class="fa fa-user g-text" aria-hidden="true"></i>
                     <span>{{ recentblog.author }}</span>
                     <i class="fa fa-tag g-text" aria-hidden="true"></i>
-                    <span>{{
-                        categories[recentblog.category_id - 1].name
-                    }}</span>
+                    <span>
+                        {{ categories[recentblog.category_id - 1].name }}
+                    </span>
                 </div>
                 <router-link
                     :to="{
@@ -77,10 +81,11 @@ export default {
     display: grid;
     grid: 1fr / auto;
     grid-auto-flow: column;
+    column-gap: 20px;
 }
 
 .recent-news img {
-    width: 70%;
+    width: 13vw;
 }
 
 .news-item {

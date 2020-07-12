@@ -50,6 +50,8 @@ Route::get('/api/schedules','ScheduleController@index');
 Route::post('/api/contact-us', 'ContactController@store');
 Route::post('/api/schedules','ScheduleController@store');
 Route::post('/api/schedules/upload','ScheduleController@storeImage');
+Route::post('/api/subscribe','SubscriptionController@subscribe');
+Route::get('/api/sendmail/{user}','MailController@sendReply');
 
 Route::get('{any}', function () {
     return view('layout');

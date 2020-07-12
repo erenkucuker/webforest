@@ -87,11 +87,12 @@ export default {
 }
 .contact-us-section {
   display: grid;
-  grid: auto auto / auto auto;
+  grid: auto auto / 1fr 1fr;
   background-color: white;
   justify-items: center;
   align-items: center;
   height: 100vh;
+  padding: 25px 25px;
 }
 
 .contact-form {
@@ -172,11 +173,8 @@ export default {
 /* MOBILE START */
 @media (max-width: 767.98px) {
   .contact-us-section {
-    grid: 1fr 1fr 1fr / 1fr;
+    grid: 1fr 1fr 1fr / 1fr 1fr;
     height: initial;
-  }
-  #map {
-    grid-column: initial;
   }
 }
 /* MOBILE END */

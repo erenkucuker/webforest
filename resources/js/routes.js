@@ -7,6 +7,8 @@ import Blog from "./pages/client/Blog/Blog.vue";
 import BlogDetail from "./pages/client/Blog/BlogDetail.vue";
 import About from "./pages/client/About.vue";
 import Contact from "./pages/client/Contact.vue";
+import Privacy from "./pages/client/Privacy.vue";
+import Disclaimer from "./pages/client/Disclaimer.vue";
 
 export const routes = [
     {
@@ -30,18 +32,18 @@ export const routes = [
         path: "/services",
         component: Services
     },
-    {
-        name: "Portfolio",
-        path: "/portfolio",
-        component: Portfolio
-    },
+    // {
+    //     name: "Portfolio",
+    //     path: "/portfolio",
+    //     component: Portfolio
+    // },
     {
         name: "Blog",
         path: "/blog",
         component: Blog
     },
     {
-        name: "BlogDetail",
+        name: "Blog Detail",
         path: "/blog/details/:blogId",
         component: BlogDetail
     },
@@ -57,7 +59,17 @@ export const routes = [
     },
     {
         name: "Schedule Form",
-        path: "/schedule-form",
+        path: "/schedule/schedule-form",
         component: ScheduleForm
+    },
+    {
+        name: "Privacy Policy",
+        path: "/privacy",
+        component: Privacy
+    },
+    {
+        name: "Disclaimer Policy",
+        path: "/disclaimer",
+        component: Disclaimer
     }
 ];

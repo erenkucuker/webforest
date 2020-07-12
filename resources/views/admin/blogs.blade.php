@@ -70,7 +70,7 @@
             <span class="status--process">{{$blog->category_id}}</span>
           </td>
           <td>
-            <img class="tiny-image" src="{{asset('blog_images').'/'.$blog->id.'.png'}}">
+            <img class="tiny-image" src="{{asset('blog_images').'/'.$blog->id.'.jpg'}}">
           </td>
           <td>
             <div class="table-data-feature">

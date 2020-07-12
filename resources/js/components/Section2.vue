@@ -21,7 +21,7 @@
         {{$t("section-2-focus-slogan-1")}}
         <strong class="g-text">{{$t("section-2-focus-slogan-2")}}</strong>
         <div class="button-feature">
-          <a class="btn-lg btn-primary pointer">Read More</a>
+          <router-link :to="{ name: 'Services' }" class="btn-lg btn-primary pointer">Read More</router-link>
         </div>
       </div>
       <div class="feature-item">

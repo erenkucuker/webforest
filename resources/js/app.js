@@ -1,5 +1,6 @@
 window.Vue = require("vue");
 window.axios = require("axios");
+
 import VueRouter from "vue-router";
 import { routes } from "./routes";
 import { filters } from "./filters";

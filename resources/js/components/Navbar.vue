@@ -30,13 +30,13 @@
           }}
         </router-link>
       </li>
-      <li class="hvr-underline-from-left">
+      <!-- <li class="hvr-underline-from-left">
         <router-link class="nav-item-st" :to="{ name: 'Portfolio' }">
           {{
           $t("Portfolio")
           }}
         </router-link>
-      </li>
+      </li>-->
       <li class="hvr-underline-from-left">
         <router-link class="nav-item-st" :to="{ name: 'Blog' }">
           {{
@@ -116,7 +116,7 @@ export default {
 
 .navbar ul {
   display: grid;
-  grid: 1fr / repeat(7, 1fr);
+  grid: 1fr / repeat(6, 1fr);
   grid-row: 1/1;
   grid-column: 2/2;
   text-align: center;
@@ -124,6 +124,7 @@ export default {
 
 .navbar img {
   width: 8vw;
+  min-width: 120px;
   cursor: pointer;
 }
 
@@ -158,7 +159,7 @@ export default {
 
 @media (max-width: 991.98px) {
   .navbar ul {
-    grid: 1fr / repeat(7, 1fr);
+    grid: 1fr / repeat(6, 1fr);
   }
   .nav-menu li a {
     font-size: max(1.5vw, 0.8vw);

@@ -17,6 +17,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;600&family=Oxygen:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet">
+  <link href="{{asset('css/brand-color.css')}}" rel="stylesheet" type="text/css" />
   {{-- CSS FILES END --}}
 </head>
 
@@ -24,11 +25,16 @@
   <div id="app">
     <App></App>
   </div>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" defer src="//js.hs-scripts.com/8083704.js">
+  </script>
+  <!-- End of HubSpot Embed Code -->
   <script src="{{ asset('js/app.js') }}" defer>
   </script>
   <script src="{{asset('js/typeit.min.js')}}">
   </script>
   <script src="{{asset('js/anime.min.js')}}"></script>
+
 </body>
 
 </html>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
+use Newsletter;
 
 class AdminController extends Controller
 {
@@ -39,8 +40,8 @@ class AdminController extends Controller
         $blog->author=$request->author;
         $blog->category_id=$request->category;
         $blog->save();
-        $imageName = $blog->id.".".$request->image->extension();  
-                 $request->image->move(public_path('blog_images'), $imageName);
+        $imageName = $blog->id.".jpg";  
+        $request->image->move(public_path('blog_images'), $imageName);
          
         return redirect()->route('adminblogpage');
     }

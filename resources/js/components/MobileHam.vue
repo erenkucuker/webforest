@@ -157,7 +157,7 @@ span:nth-of-type(3) {
     opacity: 1;
     visibility: visible;
     height: 100%;
-    z-index: 5;
+    z-index: 15;
 }
 
 .overlay.open .overlay-menu {
@@ -167,6 +167,7 @@ span:nth-of-type(3) {
     left: 0;
     background-color: white;
     opacity: 1;
+    z-index: 10;
 }
 .overlay.open .overlay-menu ul {
     height: 100vh;

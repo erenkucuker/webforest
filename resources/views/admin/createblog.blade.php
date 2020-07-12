@@ -66,6 +66,7 @@
           </div>
           <div class="col-12 col-md-9">
             <input type="file" id="file-input" name="image" class="form-control-file">
+
           </div>
         </div>
 
