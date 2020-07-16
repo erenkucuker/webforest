@@ -1,119 +1,107 @@
 <template>
-  <section class="footer">
-    <div class="footer-info">
-      <h4>{{ $t("footer-info") }}</h4>
-
-      <router-link
-        class="pointer"
-        :to="{ name: 'Home' }"
-        tag="img"
-        src="/img/logo-alone-min.png"
-        loading="lazy"
-      ></router-link>
-
-      <span>
-        <i class="fa fa-globe g-text" aria-hidden="true"></i>www.webforest.org
-      </span>
-
-      <span>
-        <i class="fa fa-envelope g-text" aria-hidden="true"></i>info@webforest.org
-      </span>
-
-      <span>
-        <i class="fa fa-map-marker g-text" aria-hidden="true"></i>
-        Istanbul Yolu Cankaya Ankara,Turkey
-      </span>
-      <span>
-        <i class="fa fa-phone g-text" aria-hidden="true"></i>
-        +1-202-555-0169
-      </span>
-    </div>
-
-    <div class="footer-recent-blog-post">
-      <h4>{{ $t("footer-recent-title") }}</h4>
-      <div class="blog-post-list">
-        <div v-for="(recentBlog, index) in recentBlogs" :key="index" class="blog-post-item">
-          <router-link
-            :to="{
+  <section class="footer main-section">
+    <div class="footer-top">
+      <div class="footer-recent-blog-post">
+        <h4>{{ $t("footer-recent-title") }}</h4>
+        <div class="blog-post-list">
+          <div v-for="(recentBlog, index) in recentBlogs" :key="index" class="blog-post-item">
+            <router-link
+              :to="{
                             name: 'BlogDetail',
                             params: { blogId: recentBlog.id }
                         }"
-            class="link pointer"
-          >
-            {{ recentBlog.title }}
-            <p v-if="recentBlog.created_at">{{ $moment(recentBlog.created_at).format("LL") }}</p>
-          </router-link>
+              class="link pointer"
+            >
+              {{ recentBlog.title }}
+              <p v-if="recentBlog.created_at">{{ $moment(recentBlog.created_at).format("LL") }}</p>
+            </router-link>
+          </div>
         </div>
       </div>
-    </div>
+      <div class="footer-info">
+        <h4>{{ $t("footer-info") }}</h4>
 
-    <div class="footer-navigation">
-      <h4>{{ $t("footer-navigation") }}</h4>
-      <ul>
-        <li>
-          <router-link :to="{ name: 'Home' }" class="link pointer">{{ $t("Home") }}</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Schedule' }" class="link pointer">{{ $t("Schedule") }}</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Services' }" class="link pointer">{{ $t("Services") }}</router-link>
-        </li>
-        <!-- <li>
+        <router-link
+          class="pointer"
+          :to="{ name: 'Home' }"
+          tag="img"
+          src="/img/logo-alone-min.png"
+          loading="lazy"
+        ></router-link>
+
+        <span>
+          <i class="fa fa-globe g-text" aria-hidden="true"></i>www.webforest.org
+        </span>
+
+        <span>
+          <i class="fa fa-envelope g-text" aria-hidden="true"></i>info@webforest.org
+        </span>
+
+        <span>
+          <i class="fa fa-map-marker g-text" aria-hidden="true"></i>
+          Istanbul Yolu Cankaya Ankara,Turkey
+        </span>
+        <span>
+          <i class="fa fa-phone g-text" aria-hidden="true"></i>
+          +1-202-555-0169
+        </span>
+      </div>
+
+      <div class="footer-navigation">
+        <h4>{{ $t("footer-navigation") }}</h4>
+        <ul>
+          <li>
+            <router-link :to="{ name: 'Home' }" class="link pointer">{{ $t("Home") }}</router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'Schedule' }" class="link pointer">{{ $t("Schedule") }}</router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'Services' }" class="link pointer">{{ $t("Services") }}</router-link>
+          </li>
+          <!-- <li>
           <router-link :to="{ name: 'Portfolio' }" class="link pointer">
             {{
             $t("Portfolio")
             }}
           </router-link>
-        </li>-->
-        <li>
-          <router-link :to="{ name: 'Blog' }" class="link pointer">{{ $t("Blog") }}</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Contact' }" class="link pointer">{{ $t("Contact us") }}</router-link>
-        </li>
-      </ul>
-    </div>
-
-    <div class="subscribe-container">
-      <h3>SUBSCRIBE</h3>
-
-      <div class="subscribe-form">
-        <form action>
-          <span>
-            Don’t miss to subscribe to our new feeds, kindly fill
-            the form below.
-          </span>
-          <div class="contact-slot" :class="[errortype]">{{ errormessage }}</div>
-          <input v-model.trim="$v.formEmail.$model" type="text" placeholder="Email Address" />
-
-          <a @click="postSubscribe" class="btn-primary btn-subscribe">
-            <i class="fa fa-paper-plane" aria-hidden="true"></i>
-          </a>
-        </form>
+          </li>-->
+          <li>
+            <router-link :to="{ name: 'Blog' }" class="link pointer">{{ $t("Blog") }}</router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'Contact' }" class="link pointer">{{ $t("Contact us") }}</router-link>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="social-link">
-      <a href="https://www.facebook.com/Webforest-Software-Development-114480526999770/">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://linkedin.com/in/webforest">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://twitter.com/WebForest3">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://www.youtube.com/channel/UCGsSUb3-1gggf7QfFPB3aHg">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="live:.cid.aeda50c8b8edb201">
-        <i class="fab fa-skype"></i>
-      </a>
+
+    <div class="social-link-container">
+      <h4>SOCIAL LINKS</h4>
+      <div class="social-link">
+        <a href="https://www.facebook.com/Webforest-Software-Development-114480526999770/">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://linkedin.com/in/webforest">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com/WebForest3">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCGsSUb3-1gggf7QfFPB3aHg">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="live:.cid.aeda50c8b8edb201">
+          <i class="fab fa-skype"></i>
+        </a>
+      </div>
     </div>
+
     <div class="copyright-container">
       <div>Copyright © 2020, All Right Reserved by Webforest Company Ltd.</div>
 
       <ul>
+        <li @click="toggleNews()" class="link pointer">Newsletter</li>
         <li>
           <router-link :to="{ name: 'Privacy Policy' }" class="link pointer">Privacy Policy</router-link>
         </li>
@@ -140,6 +128,9 @@ export default {
     };
   },
   methods: {
+    toggleNews() {
+      this.$store.commit("toggleNewsletter");
+    },
     postSubscribe() {
       this.$v.$touch();
       if (this.$v.$invalid) {
@@ -179,30 +170,25 @@ export default {
   background-color: #222;
   color: white;
   display: grid;
-  grid: auto auto auto / 1fr 1fr 1fr;
   justify-items: center;
   align-items: stretch;
   text-align: center;
-  padding: 25px;
   box-shadow: 0px -12px 85px -7px rgba(0, 0, 0, 0.35);
-  row-gap: 20px;
-}
-.footer h4 {
-  position: relative;
+  grid: auto / 1fr 4fr 1fr;
+  transition: ease all 1s;
 }
 
-.footer h4::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  height: 3px;
-  width: 100%;
-  background: -webkit-linear-gradient(
-    var(--gradient-color1),
-    var(--gradient-color2)
-  );
+.footer-top {
+  display: grid;
+  grid-auto-flow: column;
+  justify-self: stretch;
+  grid-column: 1/-1;
 }
+
+.footer-navigation {
+  display: grid;
+}
+
 .footer-navigation ul li {
   padding: 6px 0px;
 }
@@ -214,7 +200,6 @@ export default {
 .footer-info {
   display: grid;
   justify-items: center;
-  row-gap: 6px;
 }
 
 .footer-info span {
@@ -222,11 +207,15 @@ export default {
   grid-auto-flow: column;
   column-gap: 6px;
   align-items: center;
-  align-content: center;
+  white-space: nowrap;
 }
 
 .footer-info img {
-  width: 80px;
+  width: 50px;
+}
+
+.footer-recent-blog-post {
+  display: grid;
 }
 
 .blog-post-item {
@@ -238,7 +227,7 @@ export default {
 .subscribe-container {
   display: grid;
   grid-auto-flow: row;
-  align-items: stretch;
+  justify-items: stretch;
   grid-column: 1/-1;
 }
 .copyright-container {
@@ -256,44 +245,44 @@ export default {
 }
 .subscribe-form input {
   height: 40px;
-  width: 80%;
   color: green;
   border: 2px solid green;
   padding-left: 5px;
 }
 
-.subscribe-form a {
+.btn-subscribe {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
   height: 40px;
-}
-
-.subscribe-form button {
-  height: 40px;
-  width: 15%;
-}
-.subscribe-form button i {
-  color: white;
 }
 
 .social-link {
   color: #797878;
+  font-size: max(1.8vw, 20px);
   display: grid;
-  grid-column: 1/-1;
   grid-auto-flow: column;
-  column-gap: 15vw;
-  font-size: max(2.1vw, 24px);
-  padding: 35px 0;
+  column-gap: 10vw;
 }
+
 .social-link i {
   cursor: pointer;
 }
 .social-link i:hover {
   color: #237a57;
 }
+
+.social-link-container {
+  padding: 35px 0;
+  grid-column: 2/2;
+}
+
 /*MOBILE START */
 @media (max-width: 767.98px) {
-  .footer {
-    grid: 1fr 1fr 1fr / 1fr;
-    text-align: center;
+  .footer-top {
+    grid-auto-flow: row;
+    row-gap: 40px;
   }
 
   .footer-info {

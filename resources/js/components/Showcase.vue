@@ -3,16 +3,12 @@
     <div class="showcase-items">
       <h3>{{$t("showcase-title")}}</h3>
       <h1>{{$t("showcase-title2")}}</h1>
-      <div class="anim-container">
-        <span class="anim-content-text">
-          <span class="animated-content-text">{{$t("animated-text1")}}</span>
-          <span class="ml4">
-            <span class="letters letters-1">{{$t("anime-text1")}}</span>
-            <span class="letters letters-2">{{$t("anime-text2")}}</span>
-            <span class="letters letters-3">{{$t("anime-text3")}}</span>
-          </span>
-          <span class="anim-content-min-text">{{$t("animated-text2")}}</span>
-        </span>
+      <div class="anim-container ml4">
+        <span class="animated-content-text">{{$t("animated-text1")}}</span>
+        <span class="letters letters-1">{{$t("anime-text1")}}</span>
+        <span class="letters letters-2">{{$t("anime-text2")}}</span>
+        <span class="letters letters-3">{{$t("anime-text3")}}</span>
+        <span class="anim-content-min-text">{{$t("animated-text2")}}</span>
       </div>
       <router-link
         class="btn-lg btn-primary-header"
@@ -76,12 +72,6 @@ export default {
         duration: ml4.durationOut,
         easing: "easeInExpo",
         delay: ml4.delay
-      })
-      .add({
-        targets: ".ml4",
-        opacity: 0,
-        duration: 500,
-        delay: 500
       });
     window.onload = function() {
       const svg = document.querySelector("#hel");
@@ -127,17 +117,17 @@ export default {
   display: grid;
   grid: 1fr 5fr 70px / 3fr;
   justify-items: center;
-  align-items: center;
   text-align: center;
   box-shadow: inset -4px 36px 28px -14px rgba(0, 0, 0, 0.7);
   height: 90vh;
+  transition: ease all 1s;
 }
 
 .showcase-items {
   grid-row: 2/2;
-  grid-column: 2/2;
   display: grid;
   row-gap: 30px;
+  justify-items: center;
 }
 
 .showcase-items h1 {
@@ -166,16 +156,7 @@ export default {
 
 .anim-container {
   display: grid;
-  grid: 1fr / 1fr 1fr 1fr 1fr;
-  column-gap: 30px;
-  align-items: center;
-}
-
-.anim-content-text {
-  display: grid;
-  grid: 1fr 1fr 1fr/ 1fr 1fr 1fr;
-  grid-row: 1 / 1;
-  grid-column: 2/4;
+  grid-auto-flow: row;
   font-size: max(2vw, 25px);
   color: white;
   justify-self: center;
@@ -186,27 +167,14 @@ export default {
   row-gap: 10px;
 }
 
-.animated-content-text {
-  grid-row: 1/1;
-  grid-column: 2/2;
-}
-
-.anim-content-min-text {
-  grid-row: 3/3;
-  grid-column: 2/2;
-}
-
 .ml4 {
   opacity: 1;
   display: grid;
-  grid: 1fr / 1fr;
-  grid-row: 2/2;
-  grid-column: 2/3;
 }
 
 .ml4 .letters {
+  grid-row: 2/2;
   grid-column: 1/1;
-  grid-row: 1/1;
   justify-self: center;
   align-self: center;
   opacity: 1;
@@ -245,9 +213,6 @@ export default {
 
 /* TABLET START*/
 @media (max-width: 991.98px) {
-  .showcase-items h1 {
-    font-size: max(8vw, 48px);
-  }
   .showcase-items h3 {
     font-size: max(4vw, 30px);
   }

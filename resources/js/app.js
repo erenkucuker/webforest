@@ -66,6 +66,10 @@ Vue.component("file-upload", VueUploadComponent);
 
 Vue.component("phone-num-input", VuePhoneNumberInput);
 Vue.component("v-select", vSelect);
+Vue.component(
+    "modal-subscribe",
+    require("./components/ModalSubscribe.vue").default
+);
 
 const i18n = new VueI18n({
     locale: "us",
@@ -79,7 +83,14 @@ const i18n = new VueI18n({
 
 const router = new VueRouter({
     mode: "history",
-    routes: routes
+    routes: routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        } else {
+            return { x: 0, y: 0 };
+        }
+    }
 });
 
 const app = new Vue({

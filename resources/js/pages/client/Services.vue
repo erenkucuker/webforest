@@ -176,11 +176,8 @@ export default {
 
 <style>
 .services-section {
-  display: grid;
-  background-color: white;
   justify-items: center;
   align-items: center;
-  padding: 20px 20px;
 }
 
 .services-section h3 {

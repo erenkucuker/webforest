@@ -9,10 +9,15 @@ export default new Vuex.Store({
     state: {
         categories: [],
         blogs: [],
-        recentBlogs: []
+        recentBlogs: [],
+        showModalNewsletter: false
     },
 
     mutations: {
+        toggleNewsletter(state) {
+            state.showModalNewsletter = !state.showModalNewsletter;
+            console.log("clicked");
+        },
         getAllBlogs(state) {
             axios
                 .get("/api/blogs")

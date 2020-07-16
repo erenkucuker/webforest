@@ -146,10 +146,7 @@ export default {
 
 <style>
 .schedule-section {
-  display: grid;
-  background-color: white;
   text-align: center;
-  padding: 20px;
 }
 
 .schedule-section p {

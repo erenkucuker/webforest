@@ -86,13 +86,9 @@ export default {
   grid-column: span 2;
 }
 .contact-us-section {
-  display: grid;
   grid: auto auto / 1fr 1fr;
-  background-color: white;
   justify-items: center;
   align-items: center;
-  height: 100vh;
-  padding: 25px 25px;
 }
 
 .contact-form {

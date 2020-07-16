@@ -1,5 +1,5 @@
 <template>
-  <section class="page-section section-1 snap-item">
+  <section class="main-section section-1">
     <div class="title-section">
       <div class="title-section-first">
         <img src="img/logo-alone-min.png" loading="lazy" alt />
@@ -61,37 +61,28 @@ export default {};
 
 <style>
 .section-1 {
-  height: 100vh;
-  display: grid;
-  grid: 1fr 1fr / 1fr 4fr 1fr;
-  justify-items: center;
-  align-items: center;
-  text-align: center;
+  min-height: 100vh;
+  grid: auto / auto 4fr auto;
+  transition: ease all 1s;
 }
 
 .section-1 img {
-  width: max(8vw, 50px);
+  width: max(5vw, 50px);
 }
 
 .title-section {
   display: grid;
-
   font-family: Oxygen, Helvetica, sans-serif;
   font-size: max(2.5vw, 45px);
   font-weight: 500;
-  grid-row: 2/2;
-  grid-column: 2/2;
+  grid-column: 1 / -1;
   align-items: flex-end;
-  text-align: start;
-  height: 50vh;
 }
 
 .title-section-first {
   text-align: center;
-  justify-self: center;
-  grid-row: 1/1;
   grid-column: 1/-1;
-  letter-spacing: 10px;
+  letter-spacing: 6px;
 }
 .title-section-sec {
   align-self: start;
@@ -106,25 +97,21 @@ export default {};
 }
 
 .graph-section {
-  grid-row: 3/3;
   grid-column: 1/-1;
   display: grid;
-  grid: 1fr 1fr / 1fr 1fr 1fr 1fr;
-  align-items: center;
-  justify-items: center;
+  grid: auto / 1fr 1fr 1fr 1fr;
   column-gap: 0.5vw;
-  height: 50vh;
-  padding: 0 80px;
 }
 
 .graph-item {
   display: grid;
-  font-size: max(1.1vw, 17px);
-  grid-row: span 2;
-  justify-items: center;
+  font-size: max(0.9vw, 14px);
   align-items: center;
-  row-gap: max(1vh, 10px);
   text-align: center;
+}
+
+.graph-item h1 {
+  text-transform: uppercase;
 }
 
 .graph-item object {
@@ -137,24 +124,13 @@ export default {};
 /* MOBILE START */
 @media (max-width: 767.98px) {
   .section-1 {
-    height: 300vh !important;
-    grid: 1fr 2fr / 1fr;
     row-gap: initial;
   }
 
-  .title-section {
-    height: 100vh !important;
-    grid-row: 1/1;
-    grid-column: 1/2;
-    grid: 1fr 1fr 1fr 1fr / 1fr;
-  }
-
   .title-section-first {
-    grid-row: 2/2;
     grid-column: 1/-1;
   }
   .title-section-sec {
-    grid-row: 3/3;
     grid-column: 1/-1;
   }
 
@@ -170,22 +146,13 @@ export default {};
 /* MOBILE END */
 /* TABLET START */
 @media (max-width: 991.98px) {
-  .section-1 {
-    height: 200vh;
-  }
-
   .title-section {
     font-size: max(4vw, 40px);
-    height: 100vh;
+    min-height: 50vh;
   }
   .graph-section {
     grid: initial;
     grid: 1fr 1fr / 1fr 1fr;
-    height: 100vh;
-  }
-
-  .graph-item {
-    font-size: max(3vw, 18px);
   }
 }
 /* TABLET END */

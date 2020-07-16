@@ -2,6 +2,7 @@
   <div>
     <navigation-bar></navigation-bar>
     <mobile-ham></mobile-ham>
+    <modal-subscribe></modal-subscribe>
     <breadcrumb v-if="$route.name != 'Home'"></breadcrumb>
     <router-view></router-view>
     <footer-section></footer-section>
@@ -10,6 +11,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      modalToggle: true
+    };
+  },
   created() {
     this.$store.commit("getAllCategories");
     this.$store.commit("getAllBlogs");

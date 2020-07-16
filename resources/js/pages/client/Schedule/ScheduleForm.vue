@@ -21,11 +21,8 @@ export default {
 
 <style>
 .schedule-form-section {
-  display: grid;
-  background-color: white;
   align-items: center;
   row-gap: 20px;
-  padding: 25px 0;
 }
 
 .schedule-form-section h3 {

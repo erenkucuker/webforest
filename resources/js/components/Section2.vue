@@ -1,6 +1,6 @@
 <template>
-  <section class="page-section section-2 snap-item">
-    <div class="service-title">
+  <section class="main-section section-2">
+    <div class="main-section-title">
       <h1>
         {{$t("section-2-our")}}
         <span class="g-text">{{$t("section-2-services")}}</span>
@@ -54,18 +54,11 @@ export default {};
 
 <style>
 .section-2 {
-  height: 100vh;
   display: grid;
-  grid: 1fr 4fr 1fr / 1fr 4fr 1fr;
   justify-items: center;
   align-items: center;
-  padding: 0 50px;
-}
-
-.service-title {
-  grid-row: 1/1;
-  grid-column: 2/2;
-  font-size: max(2.5vw, 30px);
+  min-height: 100vh;
+  transition: ease all 1s;
 }
 
 .features {
@@ -110,10 +103,6 @@ export default {};
 }
 /* MOBILE START */
 @media (max-width: 767.98px) {
-  .section-2 {
-    height: 300vh;
-    grid: 1fr 1fr / 1fr;
-  }
   .service-title {
     font-size: 1.8rem;
     display: grid;
@@ -131,7 +120,6 @@ export default {};
 
   .feature-title {
     grid-column: 1/-1;
-    height: 50vh;
   }
 
   .feature-item {

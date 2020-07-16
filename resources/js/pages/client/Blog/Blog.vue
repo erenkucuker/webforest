@@ -219,12 +219,8 @@ export default {
 }
 
 .blog-section {
-  display: grid;
   grid: 1fr /1fr 8fr 1fr;
   row-gap: 20px;
-  background-color: white;
-  min-height: 90vh;
-  padding: 25px 0px;
 }
 .blog-news {
   display: grid;

@@ -35,12 +35,9 @@ export default {
 
 <style>
 .about-section {
-  display: grid;
   grid: auto auto auto / 1fr 1fr;
-  background-color: white;
   justify-items: center;
   align-items: center;
-  padding: 25px 25px;
 }
 .about-section h3 {
   font-size: max(2.5vw, 25px);

@@ -22,27 +22,17 @@ export default {};
   color: white;
   background: var(--theme-black);
   display: grid;
-  grid: 1fr / 1fr 1fr 1fr;
+  justify-content: space-around;
   align-items: center;
-  box-shadow: 8px -2px 155px 16px rgba(0, 0, 0, 0.75);
   height: 10vh;
   padding: 0px 25px;
-}
-
-.call-action .call-action-sec {
-  grid-column: 3/3;
-  text-align: center;
-}
-
-.call-action p {
-  justify-self: end;
+  grid-auto-flow: column;
 }
 
 /* MOBILE START */
 @media (max-width: 767.98px) {
   .call-action {
     height: 10vh;
-    grid: 1fr / 4fr 1fr 4fr;
   }
 }
 /* MOBILE END */
