@@ -1,16 +1,9 @@
-/* ANIMATIONS START*/
-
-/**
- * ----------------------------------------
- * animation slide-in-blurred-top
- * ----------------------------------------
- */
 @-webkit-keyframes slide-in-blurred-top {
     0% {
         -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
         transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
-        -webkit-transform-origin: 50% 0%;
-        transform-origin: 50% 0%;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
         -webkit-filter: blur(40px);
         filter: blur(40px);
         opacity: 0;
@@ -29,8 +22,8 @@
     0% {
         -webkit-transform: translateY(-200px) scaleY(2.5) scaleX(0.2);
         transform: translateY(-200px) scaleY(2.5) scaleX(0.2);
-        -webkit-transform-origin: 50% 0%;
-        transform-origin: 50% 0%;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
         -webkit-filter: blur(40px);
         filter: blur(40px);
         opacity: 0;
@@ -45,13 +38,6 @@
         opacity: 1;
     }
 }
-
-/**
- * ----------------------------------------
- * animation rotate-center
- * ----------------------------------------
- */
-
 @-webkit-keyframes rotate-center {
     0% {
         -webkit-transform: rotate(0);
@@ -72,12 +58,10 @@
         transform: rotate(360deg);
     }
 }
-
 @keyframes animate-stripes {
     0% {
         background-position: 0 0;
     }
-
     100% {
         background-position: 60px 0;
     }
@@ -92,11 +76,10 @@
         left: 0;
     }
 }
-
 @-webkit-keyframes change {
     0%,
-    12.66%,
-    100% {
+    100%,
+    12.66% {
         transform: translate3d(0, 0, 0);
     }
     16.66%,
@@ -122,8 +105,8 @@
 }
 @keyframes change {
     0%,
-    12.66%,
-    100% {
+    100%,
+    12.66% {
         transform: translate3d(0, 0, 0);
     }
     16.66%,
@@ -147,11 +130,10 @@
         transform: translate3d(0, -25%, 0);
     }
 }
-
 @-moz-keyframes change {
     0%,
-    12.66%,
-    100% {
+    100%,
+    12.66% {
         transform: translate3d(0, 0, 0);
     }
     16.66%,
@@ -175,7 +157,6 @@
         transform: translate3d(0, -25%, 0);
     }
 }
-
 @keyframes scale-in-center {
     0% {
         -webkit-transform: scale(0);
@@ -188,10 +169,6 @@
         opacity: 1;
     }
 }
-
-/*ANIMATIONS END*/
-/* CORE RESET START */
-
 * {
     margin: 0;
     padding: 0;
@@ -201,66 +178,53 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-stroke: 0.008em rgba(51, 51, 51, 0.5);
 }
-
 body::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 body::-webkit-scrollbar-thumb {
     background-color: #093028;
-    outline: 1px solid slategrey;
+    outline: 1px solid #708090;
 }
 body::-webkit-scrollbar {
     width: 0.7em;
     background-color: rgba(255, 255, 255, 0.1);
 }
-
 ul li a {
     text-decoration: none;
 }
-
 ul {
     list-style: none;
 }
-
 a {
     text-decoration: none;
     color: inherit;
 }
-
 #app {
     background: url(/img/bg.svg);
 }
-/* CORE RESET END */
-
-/*COLOR VARIABLES START*/
 :root {
     --primary-color: #235004;
     --theme-black: #333;
     --gradient-color1: #093028;
     --gradient-color2: #237a57;
 }
-/*COLOR VARIABLES END*/
-
-/* COMPONENTS START*/
 .btn-sm {
     display: inline-block;
     padding: 6px 12px;
     justify-self: center;
     border-radius: 5px;
-    color: white;
+    color: #fff;
 }
 .btn-lg {
     display: inline-block;
     justify-self: center;
-    color: white;
+    color: #fff;
 }
-
 .btn-exp {
     display: inline-block;
     padding: 8px 20px;
-    color: white;
+    color: #fff;
 }
-
 .btn-primary-header {
     display: grid;
     align-items: center;
@@ -268,32 +232,30 @@ a {
     width: max(10vw, 50px);
     height: 6vh;
     letter-spacing: 3px;
-    background: transparent;
-    color: white;
+    background: 0 0;
+    color: #fff;
     transition: 0.25s;
     border: 0.2vw solid;
     border-color: #237a57;
     box-shadow: 0.3em 0.3em 0 0 #237a57, inset 0.3em 0.3em 0 0 #237a57;
-    text-shadow: 1px 1px 2px #237a57, 0 0 1em white, 0 0 0.1em white;
+    text-shadow: 1px 1px 2px #237a57, 0 0 1em #fff, 0 0 0.1em #fff;
     padding: 5px;
 }
-
 .btn-primary-header:hover {
-    color: white;
+    color: #fff;
     box-shadow: 0 0 0 0 #237a57, inset 6em 3.5em 0 0 #237a57;
-    text-shadow: 1px 1px 2px #237a57, 0 0 1em white, 0 0 0.1em white;
+    text-shadow: 1px 1px 2px #237a57, 0 0 1em #fff, 0 0 0.1em #fff;
 }
 .btn-primary {
-    background: transparent;
+    background: 0 0;
     color: #237a57;
     border: 2px solid;
     border-color: #237a57;
     padding: 5px;
 }
-
 .btn-primary:hover {
     background-color: #237a57;
-    color: white;
+    color: #fff;
 }
 .g-text {
     -webkit-text-stroke: initial;
@@ -304,7 +266,6 @@ a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .g-item {
     background: linear-gradient(
         30deg,
@@ -313,31 +274,25 @@ a {
     );
 }
 .l-item {
-    text-shadow: 5px 0.5px 1.5px #237a57, 0 0 1em white, 0 0 1em white;
+    text-shadow: 5px 0.5px 1.5px #237a57, 0 0 1em #fff, 0 0 1em #fff;
 }
-/* COMPONENTS END*/
-
 .modal-open {
     overflow: hidden;
 }
-
 .device-landscape {
     display: none;
 }
-
 .section-underline {
     height: 4px;
     width: 20%;
     margin: auto;
 }
-
 .cd-timeline-navigation {
     display: grid;
     grid-auto-flow: column;
 }
-
 .page-section {
-    background-color: white;
+    background-color: #fff;
     display: grid;
     padding: 25px 25px;
 }
@@ -350,17 +305,12 @@ a {
     font-size: max(2.5vw, 30px);
     padding: 15px;
 }
-
-/* SHORTHANDS START*/
-
 .not-allowed {
     cursor: not-allowed !important;
 }
-
 .pointer {
     cursor: pointer;
 }
-
 .w-25 {
     width: 25% !important;
 }
@@ -376,26 +326,18 @@ a {
 .d-block {
     display: block !important;
 }
-
 .link {
     color: #237a57;
 }
 .link:hover {
     color: #a2e3c4;
 }
-/* SHORTHANDS END*/
-
-/* Extra small devices (portrait phones, less than 576px)*/
-
-/* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
     .filling-line {
         width: 5px;
         height: 100%;
     }
 }
-
-/* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
     .btn-primary-header {
         font-size: max(2vw, 12px);

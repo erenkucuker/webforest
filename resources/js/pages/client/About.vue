@@ -35,7 +35,6 @@ export default {
 
 <style>
 .about-section {
-  grid: auto auto auto / 1fr 1fr;
   justify-items: center;
   align-items: center;
 }
@@ -55,14 +54,15 @@ export default {
 }
 
 .video-forest {
-  width: 70%;
+  width: 75%;
   border: 2px solid green;
+  min-width: 200px;
 }
 
 /* MOBILE START */
 @media (max-width: 767.98px) {
   .about-section {
-    grid: auto auto auto / 1fr;
+    grid: auto auto auto / auto;
   }
   .about-title {
     grid-row: initial;
@@ -73,5 +73,14 @@ export default {
 }
 /* MOBILE END */
 /* TABLET START */
+@media (max-width: 991.98px) {
+  .video-forest {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .about-description {
+    grid-column: 1/-1;
+  }
+}
 /* TABLET END */
 </style>

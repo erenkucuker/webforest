@@ -5,7 +5,6 @@
       <hr class="section-underline g-item" />
     </div>
     <div class="contact-form">
-      <h2 class="g-text contact-info-title">CONTACT FORM</h2>
       <p>{{ $t("contact-form-desc") }}</p>
       <form @submit.prevent="postContactForm()">
         <input type="text" placeholder="NAME" v-model="contactname" />
@@ -83,18 +82,16 @@ export default {
 
 <style>
 .contact-title {
-  grid-column: span 2;
 }
 .contact-us-section {
-  grid: auto auto / 1fr 1fr;
-  justify-items: center;
+  grid-auto-flow: row;
+  justify-items: stretch;
   align-items: center;
+  text-align: center;
 }
 
 .contact-form {
   display: grid;
-  grid-row: span 2;
-  grid-column: 1/1;
   align-self: stretch;
   text-align: center;
 }
@@ -139,7 +136,6 @@ export default {
   border: none;
 }
 .contact-information {
-  grid-row: span 2;
   display: grid;
   justify-items: center;
   text-align: center;
@@ -157,7 +153,7 @@ export default {
 }
 #map {
   border: 2px solid #237a57 !important;
-  grid-column: span 2;
+
   width: 100%;
   height: 100%;
 }
@@ -168,10 +164,6 @@ export default {
 }
 /* MOBILE START */
 @media (max-width: 767.98px) {
-  .contact-us-section {
-    grid: 1fr 1fr 1fr / 1fr 1fr;
-    height: initial;
-  }
 }
 /* MOBILE END */
 /* TABLET START */

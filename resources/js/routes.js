@@ -9,6 +9,7 @@ import About from "./pages/client/About.vue";
 import Contact from "./pages/client/Contact.vue";
 import Privacy from "./pages/client/Privacy.vue";
 import Disclaimer from "./pages/client/Disclaimer.vue";
+import Error from "./pages/client/404.vue";
 
 export const routes = [
     {
@@ -71,5 +72,14 @@ export const routes = [
         name: "Disclaimer Policy",
         path: "/disclaimer",
         component: Disclaimer
+    },
+    {
+        name: "Error",
+        path: "/error",
+        component: Error
+    },
+    {
+        path: "*",
+        redirect: "/error"
     }
 ];

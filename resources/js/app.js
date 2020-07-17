@@ -1,11 +1,9 @@
 window.Vue = require("vue");
 window.axios = require("axios");
-
 import VueRouter from "vue-router";
 import { routes } from "./routes";
 import { filters } from "./filters";
 import store from "./store";
-import { defaultsDeep } from "lodash";
 import VueAnime from "vue-animejs";
 import VueI18n from "vue-i18n";
 import { lang } from "./lang";
@@ -17,11 +15,9 @@ import "vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css";
 import VueUploadComponent from "vue-upload-component";
 import VueMoment from "vue-moment";
 import VueMeta from "vue-meta";
-import VueTheMask from "vue-the-mask";
 import VuePhoneNumberInput from "vue-phone-number-input";
 import "vue-phone-number-input/dist/vue-phone-number-input.css";
 import Vuelidate from "vuelidate";
-import CoreuiVue from "@coreui/vue";
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
 
@@ -30,9 +26,7 @@ Vue.use(VueAnime);
 Vue.use(VueI18n);
 Vue.use(VueMoment);
 Vue.use(VueMeta);
-Vue.use(VueTheMask);
 Vue.use(Vuelidate);
-Vue.use(CoreuiVue);
 
 Vue.component("App", require("./pages/client/App.vue").default);
 

@@ -177,7 +177,6 @@ export default {
 <style>
 .services-section {
   justify-items: center;
-  align-items: center;
 }
 
 .services-section h3 {
@@ -185,8 +184,7 @@ export default {
 }
 .service-cards {
   display: grid;
-  grid-auto-flow: column;
-  grid: 1fr 1fr / 1fr 1fr 1fr;
+  grid: auto auto / auto auto auto;
   row-gap: 10px;
   column-gap: 10px;
 }
@@ -196,7 +194,7 @@ export default {
   font-size: max(1.5vw, 30px);
 }
 .service-cards p {
-  font-size: max(1vw, 16px);
+  font-size: max(1.2vw, 18px);
 }
 
 .service-card {
@@ -209,7 +207,7 @@ export default {
   text-align: center;
 }
 .service-card i {
-  font-size: max(6vw, 40px);
+  font-size: max(6vw, 70px);
   -webkit-text-stroke: 0.008em rgb(255, 255, 255);
 }
 

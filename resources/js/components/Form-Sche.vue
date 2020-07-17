@@ -106,7 +106,7 @@
             <span class="g-text">{{ file.size }} KB</span>
           </li>
         </ul>
-        <a class="btn-upload btn-primary">Upload Files</a>
+        <a class="btn-upload btn-primary pointer">Upload Files</a>
       </fieldset>
     </div>
     <div class="form-tab tab-4" v-if="step == 4">
@@ -168,8 +168,6 @@ export default {
   created() {
     this.getScheduledDates();
   },
-  mounted() {},
-  computed: {},
   data() {
     return {
       csrf: document
@@ -412,7 +410,7 @@ export default {
 .form-tab fieldset input:focus {
   outline: none;
   border-bottom: 2px solid green;
-  font-size: max(1.5vw, 18px);
+  font-size: max(1.2vw, 18px);
   color: green;
 }
 .form-tab fieldset input:focus::placeholder {
@@ -457,6 +455,7 @@ export default {
 }
 
 .progress-fill {
+  white-space: nowrap;
   width: 25%;
   height: 18px;
   color: white;
