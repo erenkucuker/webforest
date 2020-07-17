@@ -25,22 +25,22 @@
         </div>
       </div>
       <div class="feature-item">
-        <i class="fa fa-desktop g-text" aria-hidden="true"></i>
+        <i class="fa fa-desktop" aria-hidden="true"></i>
         <h3>{{$t("section-2-feature-title1")}}</h3>
         <p>{{$t("section-2-feature-desc1")}}</p>
       </div>
       <div class="feature-item">
-        <i class="fa fa-search g-text" aria-hidden="true"></i>
+        <i class="fa fa-search" aria-hidden="true"></i>
         <h3>{{$t("section-2-feature-title2")}}</h3>
         <p>{{$t("section-2-feature-desc2")}}</p>
       </div>
       <div class="feature-item">
-        <i class="fa fa-tasks g-text" aria-hidden="true"></i>
+        <i class="fa fa-tasks" aria-hidden="true"></i>
         <h3>{{$t("section-2-feature-title3")}}</h3>
         <p>{{$t("section-2-feature-desc3")}}</p>
       </div>
       <div class="feature-item">
-        <i class="fa fa-bullseye g-text" aria-hidden="true"></i>
+        <i class="fa fa-bullseye" aria-hidden="true"></i>
         <h3>{{$t("section-2-feature-title4")}}</h3>
         <p>{{$t("section-2-feature-desc4")}}</p>
       </div>
@@ -72,7 +72,7 @@ export default {};
 
 .feature-item {
   display: grid;
-  grid: 1fr 1fr / 60px 1fr;
+  grid: 1fr 1fr / auto auto;
   justify-items: center;
   align-items: center;
 }

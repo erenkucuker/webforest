@@ -187,6 +187,9 @@
 .fa-exclamation-circle:before {
     content: "\f06a";
 }
+.fa-tasks:before {
+    content: "\f0ae";
+}
 
 .sr-only {
     border: 0;

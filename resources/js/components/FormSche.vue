@@ -15,7 +15,7 @@
         <label for="email">{{ $t("schedule-form-email") }}</label>
         <input placeholder="Email Address" v-model.trim="$v.formEmail.$model" />
         <label for="platform">{{ $t("schedule-form-platform") }}</label>
-        <v-select
+        <vselect
           :options="[
                         'Skype',
                         'Zoom',
@@ -24,7 +24,7 @@
                         'Whatsapp'
                     ]"
           v-model="formPlatformType"
-        ></v-select>
+        ></vselect>
         <label for="platformuserinfo">
           {{
           $t("schedule-form-platform-user")
@@ -32,7 +32,7 @@
         </label>
         <input placeholder="Number,Email or Your Id Example:myskypeid1" v-model="formPlatformUser" />
         <label for="phone">{{ $t("schedule-form-phone") }}</label>
-        <phone-num-input
+        <phonenuminput
           color="green"
           type="phone"
           placeholder="Phone Number"
@@ -78,7 +78,7 @@
         </h4>
         <h4>Drop files anywhere to upload or</h4>
         <a>
-          <file-upload
+          <fileupload
             :drop="true"
             :maximum="3"
             :thread="3"
@@ -89,7 +89,7 @@
             extensions="jpg,gif,png,webp"
             v-model="files"
             @input-filter="inputFilter"
-          >Select files</file-upload>
+          >Select files</fileupload>
           <div>
             Maximum resolution 1920x1080 and Maximum 3 file
             accepted.
@@ -113,7 +113,7 @@
       <fieldset>
         <legend class="g-text">{{ $t("schedule-form-calendar") }}</legend>
         <div class="date-picker">
-          <date-time-picker
+          <datetimepicker
             v-model.trim="$v.formScheduleDate.$model"
             color="#237a57"
             :inline="true"
@@ -163,8 +163,21 @@
 
 <script>
 import { required, minLength, maxLength } from "vuelidate/lib/validators";
+import phonenuminput from "vue-phone-number-input";
+import "vue-phone-number-input/dist/vue-phone-number-input.css";
+import fileupload from "vue-upload-component";
+import vselect from "vue-select";
+import "vue-select/dist/vue-select.css";
+import datetimepicker from "vue-ctk-date-time-picker";
+import "vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css";
 
 export default {
+  components: {
+    phonenuminput,
+    fileupload,
+    vselect,
+    datetimepicker
+  },
   created() {
     this.getScheduledDates();
   },

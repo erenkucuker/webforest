@@ -3,7 +3,7 @@
     <h3>{{ $t("schedule-form-title") }}</h3>
     <p>{{ $t("schedule-form-desc") }}</p>
     <hr class="section-underline g-item" />
-    <schedule-form></schedule-form>
+    <form-sche></form-sche>
   </section>
 </template>
 

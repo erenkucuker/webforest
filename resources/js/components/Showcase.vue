@@ -180,7 +180,7 @@ export default {
   opacity: 1;
   font-size: max(2vw, 25px);
   color: #237a57;
-  text-shadow: 0 1px 2px #237a57, 0 0 5em white, 0 0 0.9em white;
+  will-change: transform, opacity;
 }
 
 /* MOBILE START*/

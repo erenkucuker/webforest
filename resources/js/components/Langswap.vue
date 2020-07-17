@@ -87,7 +87,7 @@ export default {
   padding: 0 30px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+
   z-index: 3;
 }
 
@@ -105,7 +105,6 @@ export default {
 
 .dropdown-item span {
   margin-top: 5px;
-  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 767.98px) {

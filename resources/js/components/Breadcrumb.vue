@@ -29,7 +29,6 @@ export default {};
   color: white;
   display: grid;
 
-  box-shadow: inset 0px 0px 5px 6px rgba(0, 0, 0, 0.75);
   justify-items: center;
   align-items: center;
   row-gap: 10px;
@@ -59,7 +58,7 @@ export default {};
   width: 50px;
   height: 30px;
   color: white;
-  box-shadow: 20px 12px 10px rgba(0, 0, 0, 0.5);
+
   margin-bottom: 10px;
 }
 .button-set-crumb {

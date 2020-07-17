@@ -6,20 +6,12 @@ import { filters } from "./filters";
 import store from "./store";
 import VueAnime from "vue-animejs";
 import VueI18n from "vue-i18n";
-import { lang } from "./lang";
 import us from "./langs/us.json";
 import tr from "./langs/tr.json";
 import de from "./langs/de.json";
-import VueCtkDateTimePicker from "vue-ctk-date-time-picker";
-import "vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css";
-import VueUploadComponent from "vue-upload-component";
 import VueMoment from "vue-moment";
 import VueMeta from "vue-meta";
-import VuePhoneNumberInput from "vue-phone-number-input";
-import "vue-phone-number-input/dist/vue-phone-number-input.css";
 import Vuelidate from "vuelidate";
-import vSelect from "vue-select";
-import "vue-select/dist/vue-select.css";
 
 Vue.use(VueRouter);
 Vue.use(VueAnime);
@@ -52,14 +44,8 @@ Vue.component("breadcrumb", require("./components/Breadcrumb.vue").default);
 
 Vue.component("lang-swap", require("./components/Langswap.vue").default);
 
-Vue.component("schedule-form", require("./components/Form-Sche.vue").default);
+Vue.component("form-sche", require("./components/FormSche.vue").default);
 
-Vue.component("date-time-picker", VueCtkDateTimePicker);
-
-Vue.component("file-upload", VueUploadComponent);
-
-Vue.component("phone-num-input", VuePhoneNumberInput);
-Vue.component("v-select", vSelect);
 Vue.component(
     "modal-subscribe",
     require("./components/ModalSubscribe.vue").default

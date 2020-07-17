@@ -11,12 +11,11 @@
 
 <script>
 export default {
-  created() {
+  mounted() {
     this.$store.commit("getAllCategories");
     this.$store.commit("getAllBlogs");
     this.$store.commit("getRecentBlogs");
   },
-  mounted() {},
   metaInfo: {
     title: "WebForest",
 

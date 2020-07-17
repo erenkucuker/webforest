@@ -1,16 +1,4 @@
-import Home from "./pages/client/Home.vue";
-import Schedule from "./pages/client/Schedule/Schedule.vue";
-import ScheduleForm from "./pages/client/Schedule/ScheduleForm.vue";
-import Services from "./pages/client/Services.vue";
-import Portfolio from "./pages/client/Portfolio.vue";
-import Blog from "./pages/client/Blog/Blog.vue";
-import BlogDetail from "./pages/client/Blog/BlogDetail.vue";
-import About from "./pages/client/About.vue";
-import Contact from "./pages/client/Contact.vue";
-import Privacy from "./pages/client/Privacy.vue";
-import Disclaimer from "./pages/client/Disclaimer.vue";
-import Error from "./pages/client/404.vue";
-
+import Home from "./pages/client/Home";
 export const routes = [
     {
         name: "Home",
@@ -23,7 +11,7 @@ export const routes = [
     {
         name: "Schedule",
         path: "/schedule",
-        component: Schedule,
+        component: () => import("./pages/client/Schedule/Schedule"),
         meta: {
             title: "Hello"
         }
@@ -31,7 +19,7 @@ export const routes = [
     {
         name: "Services",
         path: "/services",
-        component: Services
+        component: () => import("./pages/client/Services")
     },
     // {
     //     name: "Portfolio",
@@ -41,42 +29,42 @@ export const routes = [
     {
         name: "Blog",
         path: "/blog",
-        component: Blog
+        component: () => import("./pages/client/Blog/Blog")
     },
     {
         name: "Blog Detail",
         path: "/blog/details/:blogId",
-        component: BlogDetail
+        component: () => import("./pages/client/Blog/BlogDetail")
     },
     {
         name: "About",
         path: "/about",
-        component: About
+        component: () => import("./pages/client/About")
     },
     {
         name: "Contact",
         path: "/contact",
-        component: Contact
+        component: () => import("./pages/client/Contact")
     },
     {
         name: "Schedule Form",
         path: "/schedule/schedule-form",
-        component: ScheduleForm
+        component: () => import("./pages/client/Schedule/ScheduleForm")
     },
     {
         name: "Privacy Policy",
         path: "/privacy",
-        component: Privacy
+        component: () => import("./pages/client/Privacy")
     },
     {
         name: "Disclaimer Policy",
         path: "/disclaimer",
-        component: Disclaimer
+        component: () => import("./pages/client/Disclaimer")
     },
     {
         name: "Error",
         path: "/error",
-        component: Error
+        component: () => import("./pages/client/404")
     },
     {
         path: "*",

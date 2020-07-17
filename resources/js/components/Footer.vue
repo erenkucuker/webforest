@@ -173,7 +173,6 @@ export default {
   justify-items: center;
   align-items: stretch;
   text-align: center;
-  box-shadow: 0px -12px 85px -7px rgba(0, 0, 0, 0.35);
   grid: auto / 1fr 4fr 1fr;
   transition: ease all 1s;
 }

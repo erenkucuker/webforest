@@ -1,7 +1,5 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import createPersistedState from "vuex-persistedstate";
-import router from "vue-router";
 
 Vue.use(Vuex);
 
