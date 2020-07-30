@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="editormd/css/editormd.css" />
 ## Installation Guide
 
 First take your git clone in a folder.
