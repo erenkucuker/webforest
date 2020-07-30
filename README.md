@@ -7,7 +7,7 @@ git clone https://github.com/erenkucukersoftware/webforest.git
 Next one,Install Backend Laravel Dependencies 
 
 ####Inline code
-` $ composer install`
+`$ npm install marked`
 Install Npm Dependencies for Frontend
 
 npm install
