@@ -1,26 +1,26 @@
-<link rel="stylesheet" href="editormd/css/editormd.css" />
-## Installation Guide
+# Installation Guide
 
-First take your git clone in a folder.
+**First take your git clone in a folder.**
 
-git clone https://github.com/erenkucukersoftware/webforest.git
+`$ git clone https://github.com/erenkucukersoftware/webforest.git`
 
-Next one,Install Backend Laravel Dependencies 
+**Next one,Install Backend Laravel Dependencies** 
 
 `$ composer install`
-Install Npm Dependencies for Frontend
 
-npm install
+**Install Npm Dependencies for Frontend**
 
-Run Development mode
+`npm install`
 
-npm run watch
+**Run Development mode**
+
+`npm run watch`
 or
-npm run dev
+`npm run dev`
 
+You can find api requests in vuex store file 'store.js' if it necessary.
 
-THATS ALL! COMPLETED
-
+# THATS ALL! COMPLETED
 
 
 
